@@ -7,6 +7,7 @@
 #define mp make_pair
 #define ll long long
 #define all(x) (x).begin(),(x).end()
+#define getunique(v) {sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());}
 #define vll vector<long long int>
 #define FAST ios_base :: sync_with_stdio (false); cin.tie (NULL)
 using namespace std;
@@ -18,24 +19,31 @@ ll C(ll n, ll k) {
     return (ll)(res + 0.01);
 }
 vector<vll> readGraph(ll n,ll m){
-    vector<vll> g(n);
-    for(ll i=0;i<m;i++){
-        ll a,b;
-        cin>>a>>b;
-        //sc.read(a,b);
-        //a--;b--;
-        g[a].pb(b);
-        g[b].pb(a);
-    }
-    return g;
+   vector<vll> g(n);
+   for(ll i=0;i<m;i++){
+       ll a,b;
+       cin>>a>>b;
+       //sc.read(a,b);
+       //a--;b--;
+       g[a].pb(b);
+       g[b].pb(a);
+   }
+   return g;
 }
 vector<vll> readTree(int n){
-    return readGraph(n,n-1);
+   return readGraph(n,n-1);
 }
 //----------------------------------------------------------------------------
 void solve()
 {
-   
+   string s;
+   cin>>s;
+   if(s[0]=='1'){
+      cout<<"10"+s.substr(1)<<endl;
+   }
+   else{
+      cout<<"1"+s.substr(0)<<endl;
+   }
 }
 int main() {
 FAST;
@@ -46,3 +54,19 @@ while(t--){
 }
 return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
